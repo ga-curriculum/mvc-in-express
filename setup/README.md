@@ -1,4 +1,4 @@
-# ![[tktk Module Name] - Setup](./assets/hero.png)
+# ![MVC in Express - Setup](./assets/hero.png)
 
 ## Setup
 
@@ -8,15 +8,21 @@ Open your Terminal application and navigate to your **`~/code/ga/lectures`** dir
 cd ~/code/ga/lectures
 ```
 
-Make a new directory called **`[tktk-module-name]`**, then enter this directory:
+## Cloning the starter code
+
+This lecture uses the [`MEN Stack CRUD App Fruits Solution`](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-crud-app-fruits-solution) as starter code. This insures a uniform starting point for our file structure before we make any directory changes.
+
+Navigate to the [MEN Stack Auth Template](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-crud-app-fruits-solution) and clone the repository to your machine:
 
 ```bash
-mkdir [tktk-module-name]
-cd [tktk-module-name]
+git clone https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-crud-app-fruits-solution.git
 ```
 
-<!-- Other setup instructions here -->
+`cd` into the starter code directory:
 
+```bash
+cd men-stack-crud-app-fruits-solution
+```
 
 Open the contents of the directory in VSCode:
 

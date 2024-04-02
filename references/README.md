@@ -1,13 +1,5 @@
-# ![[tktk Module Name] - References](./assets/hero.png)
+# ![MVC in Express - References](./assets/hero.png)
 
 ## Lesson references
 
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
-
-## Level Up references
-
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
-- [tktk descriptive name of link]()
+- [MVC Design Pattern](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
