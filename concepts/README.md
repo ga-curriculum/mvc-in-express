@@ -9,8 +9,7 @@ MVC stands for Model-View-Controller. It's a way of organizing a website or an a
 1. **Model**: This is where all the data is kept. Think of it like a storage box that holds all the information your website or app needs.
 
 2. **View**: This is the part that you see on the screen. It's like the layout and design of a page in your app or website. The view decides how to display the information from the model to the user. 
-3. 
-4. **Controller**: This part acts as a middleman between the Model and the View. It takes care of what happens when you interact with the website or app. 
+3. **Controller**: This part acts as a middleman between the Model and the View. It takes care of what happens when you interact with the website or app. 
 
 ![tktk Hunter a visual of MVC here](https://developer.mozilla.org/en-US/docs/Glossary/MVC/model-view-controller-light-blue.png)
 
