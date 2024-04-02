@@ -12,7 +12,7 @@ cd ~/code/ga/lectures
 
 This lecture uses the [`MEN Stack CRUD App Fruits Solution`](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-crud-app-fruits-solution) as starter code. This insures a uniform starting point for our file structure before we make any directory changes.
 
-Navigate to the [MEN Stack Auth Template](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-crud-app-fruits-solution) and clone the repository to your machine:
+Navigate to the [MEN Stack CRUD App Fruits Solution](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-crud-app-fruits-solution) and clone the repository to your machine:
 
 ```bash
 git clone https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-crud-app-fruits-solution.git
