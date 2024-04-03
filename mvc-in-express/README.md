@@ -167,13 +167,13 @@ Your server file should now look something like this:
 const fruitsController = require("./controllers/fruitsController");
 
 app.get("/", fruitsController.home);
-app.get("/fruits/new", fruitsController.newFruitForm);
-app.post("/fruits", fruitsController.createFruit);
+app.get("/fruits/new", fruitsController.new);
+app.post("/fruits", fruitsController.create);
 app.get("/fruits", fruitsController.index);
-app.get("/fruits/:fruitId", fruitsController.showFruit);
-app.delete("/fruits/:fruitId", fruitsController.deleteFruit);
-app.get("/fruits/:fruitId/edit", fruitsController.editFruitForm);
-app.put("/fruits/:fruitId", fruitsController.updateFruit);
+app.get("/fruits/:fruitId", fruitsController.show);
+app.delete("/fruits/:fruitId", fruitsController.delete);
+app.get("/fruits/:fruitId/edit", fruitsController.edit);
+app.put("/fruits/:fruitId", fruitsController.update);
 
 app.listen(3000, () => {
   console.log("The express app is ready!");
