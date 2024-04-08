@@ -14,7 +14,7 @@ In this lesson, we'll unravel the three core components of the MVC design patter
 | ------------------------------------------------- | :--------: | :---: | ------------------------------------------------------------------------------------------- |
 | [Setup](./setup/README.md)                        |     --     |  --   | Setting up the development environment                                                      |
 | [Concepts](./concepts/README.md)                  |     --     |  --   | Understand and explain the Model-View-Controller (MVC) architecture                         |
-| [MVC in Express](./mvc-in-express/README.md) |     --     |  --   | Refactor fruits to make use of a `fruitsController`, completing the MVC pattern in this app |
+| [MVC in Express](./mvc-in-express/README.md) |     --     |  --   | Refactor fruits to make use of a `fruitsCtrl`, completing the MVC pattern in this app |
 | **Total content**                                 |     --     |  --   |                                                                                             |
 
 ## References

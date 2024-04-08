@@ -1,20 +1,14 @@
-# ![MVC in Express - tktk Microlesson Name](./assets/hero.png)
+# ![MVC in Express - MVC in Express](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to refactor their fruits routes to make use of a fruits controller completing the MVC structure for this application.
+**Learning objective:** By the end of this lesson, students will be able to restructure a basic MEN stack app into one that conforms to MVC architecture.
 
 ## Implementing MVC in our application
 
 Before we dive into the practical steps, let's review what controllers do in the [MVC (Model-View-Controller)](https://developer.mozilla.org/en-US/docs/Glossary/MVC) design pattern.
 
-In MVC:
-
-- **Model**: Represents your data and business logic. It's directly connected to your database (in our case, the fruits data).
-- **View**: These are the templates (like your EJS files) that present data to the user in a specific format.
-- **Controller**: This is where we will focus now. Controllers are the intermediaries between Models and Views. They handle the user's requests, interact with Models to retrieve data, and decide which View to render.
+In MVC, Controllers are the intermediaries between Models and Views. They handle the user's requests, interact with Models to retrieve data, and decide which View to render.
 
 In simpler terms, whenever someone visits a page on your application, it's the controller's job to figure out what the user is asking for, talk to the model to get that data, and then send it to the view to be displayed.
-
-![tktk Hunter a visual of MVC here](https://developer.mozilla.org/en-US/docs/Glossary/MVC/model-view-controller-light-blue.png)
 
 ## Creating controllers
 
@@ -31,39 +25,47 @@ mkdir controllers
 cd controllers
 ```
 
-### Step 2: Create the `fruitsController.js` file
+### Step 2: Create the `fruits.js` file
 
-Now, within the `controllers` directory, we'll create a file named `fruitsController.js`. This file will contain all the logic related to handling requests for anything to do with 'fruits' in your application.
+Now, within the `controllers` directory, we'll create a file named `fruits.js`. This file will contain all the logic related to handling requests for anything to do with 'fruits' in your application.
 
 Create the fruits controller:
 
 ```bash
-touch fruitsController.js
+touch fruits.js
 ```
 
-### Step 3: Understanding `fruitsController.js`
+### Step 3: Understanding `controllers/fruits.js`
 
-First, at the top of `fruitsController.js`, we'll import the `Fruit` model just like we did in `server.js`:
+First, at the top of `fruits.js`, we'll import the `Fruit` model just like we did in `server.js`:
 
 ```js
-const Fruit = require("../models/fruit");
+// controllers/fruits.js
+
+const Fruit = require('../models/fruit');
 ```
 
 Once imported, you can use the `Fruit` model to perform CRUD operations in your controller functions.
 
-In `fruitsController.js`, we'll be moving the logic that currently resides in your routes in the main server file (like showing all fruits, displaying a form to add a new fruit, etc.). Each of these actions will be defined as a function in `fruitsController.js`.
+
+Currently, all of the logic that handles requests to different routes is handled in `server.js`. 
+Rather than having this logic live there, inside anonymous callback functions, we want to move the code into named functions in our controller file. There functions will then be exported from our controller file for use with our routes. 
 
 For example, if you have a route in your main server file that looks like this:
 
 ```js
-app.get("/fruits", async (req, res) => {
+// server.js
+
+app.get('/fruits', async (req, res) => {
   // logic to show all fruits
 });
 ```
 
-We will move this logic to `fruitsController.js` and encapsulate it within a new function like this:
+We will move this logic to `fruits.js` and encapsulate it within a new function like this:
 
 ```js
+// controllers/fruits.js
+
 const index = async (req, res) => {
   // logic to show all fruits
 };
@@ -76,7 +78,7 @@ module.exports = {
 
 In Node.js, each file in a project is treated as a separate module. `module.exports` is an object that the current module returns when it is "required" in another module. When you assign a function or an object to `module.exports`, you're making it accessible to other modules.
 
-In your `fruitsController.js` file, you will likely have multiple functions - each handling different routes (like index, show, create, etc.). To make all these functions accessible in other files (like your main server file), you need to add them to `module.exports`. Each property of this object is a function you wish to export. The property name will be how you access this function in other modules.
+In your `controllers/fruits.js` file, you will likely have multiple functions - each handling different routes (like index, show, create, etc.). To make all these functions accessible in other files (like your main server file), you need to add them to `module.exports`. Each property of this object is a function you wish to export. The property name will be how you access this function in other modules.
 
 ### Naming controller functions
 
@@ -102,16 +104,16 @@ You can confidently follow this pattern for all your routes in express:
 
 ## Moving route logic to controller functions
 
-Let's start with the index route and move all route logic over to a new controller function:
+Let's start with the index route and move our route logic over to a new controller function:
 
 ```js
-// controllers/fruitsController.js
+// controllers/fruits.js
 
-const Fruit = require("../models/fruit");
+const Fruit = require('../models/fruit');
 
 const index = async (req, res) => {
   const foundFruits = await Fruit.find();
-  res.render("fruits/index.ejs", { fruits: foundFruits });
+  res.render('fruits/index.ejs', { fruits: foundFruits });
 };
 
 module.exports = {
@@ -123,18 +125,18 @@ module.exports = {
 
 Now that we moved our route logic to our controller, we'll need to import this logic back into `server.js` and connect it with our route handlers.
 
-In your `server.js` file, import the `fruitsController` just above your routes:
+In your `server.js` file, import the `fruitsCtrl` just above your routes. We'll call it `fruitsCtrl` for short: 
 
 ```js
-const fruitsController = require("./controllers/fruitsController");
+const fruitsCtrl = require("./controllers/fruits");
 ```
 
-Now replace the inline route handler in your `server.js` file with the corresponding function from the `fruitsController`.
+Now replace the inline route handler in your `server.js` file with the corresponding function from `fruitsCtrl`.
 
 For example, your original route:
 
 ```js
-app.get("/fruits", async (req, res) => {
+app.get('/fruits', async (req, res) => {
   // logic to get all fruits
 });
 ```
@@ -142,16 +144,16 @@ app.get("/fruits", async (req, res) => {
 should be refactored to:
 
 ```js
-app.get("/fruits", fruitsController.index);
+app.get('/fruits', fruitsCtrl.index);
 ```
 
 We have replaced the anonymous callback function in the route handler with a named function being imported from the controller.
 
 If you run your application, you should be able to visit `localhost:3000/fruits` and see your new controller function in action.
 
-## 🎓 You Do: Move all routes to `fruitsController`
+## 🎓 You Do: Move all routes to `fruitsCtrl`
 
-Take some time to move the logic from each route in `server.js` to a new function in `fruitController.js`. Then refactor each route handler in `server.js` to use a function imported from `fruitsController`. Test each function before moving on to the next to ensure that your application is still able to access each new route as you go.
+Take some time to move the logic from each route in `server.js` to a new function in `fruitController.js`. Then refactor each route handler in `server.js` to use a function imported from `fruitsCtrl`. Test each function before moving on to the next to ensure that your application is still able to access each new route as you go.
 
 ## Conclusion
 
@@ -164,16 +166,16 @@ Your server file should now look something like this:
 
 // all dependencies above
 
-const fruitsController = require("./controllers/fruitsController");
+const fruitsCtrl = require('./controllers/fruits');
 
-app.get("/", fruitsController.home);
-app.get("/fruits/new", fruitsController.new);
-app.post("/fruits", fruitsController.create);
-app.get("/fruits", fruitsController.index);
-app.get("/fruits/:fruitId", fruitsController.show);
-app.delete("/fruits/:fruitId", fruitsController.delete);
-app.get("/fruits/:fruitId/edit", fruitsController.edit);
-app.put("/fruits/:fruitId", fruitsController.update);
+app.get('/', fruitsCtrl.home);
+app.get('/fruits/new', fruitsCtrl.new);
+app.post('/fruits', fruitsCtrl.create);
+app.get('/fruits', fruitsCtrl.index);
+app.get('/fruits/:fruitId', fruitsCtrl.show);
+app.delete('/fruits/:fruitId', fruitsCtrl.delete);
+app.get('/fruits/:fruitId/edit', fruitsCtrl.edit);
+app.put('/fruits/:fruitId', fruitsCtrl.update);
 
 app.listen(3000, () => {
   console.log("The express app is ready!");
@@ -183,21 +185,22 @@ app.listen(3000, () => {
 Your controller file should look like this:
 
 ```js
-// fruitsController.js
+// controller/fruits.js
+
 const Fruit = require("../models/fruit");
 
 const home = async (req, res) => {
-  res.render("index.ejs");
+  res.render('index.ejs');
 };
 
 const new = (req, res) => {
-  res.render("fruits/new.ejs");
+  res.render('fruits/new.ejs');
 };
 
 const create = async (req, res) => {
-  req.body.isReadyToEat = req.body.isReadyToEat === "on";
+  req.body.isReadyToEat = req.body.isReadyToEat === 'on';
   await Fruit.create(req.body);
-  res.redirect("/fruits");
+  res.redirect('/fruits');
 };
 
 // Display all fruits

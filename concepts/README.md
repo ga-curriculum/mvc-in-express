@@ -6,13 +6,14 @@
 
 MVC stands for Model-View-Controller and is a key approach in building applications. It organizes an app into three connected but separate parts.
 
- - **Model:** Think of the Model as the app's memory bank. It holds and manages all the data the app needs, much like a storage system.
+ - **Model:** The Model is a source of truth for the structure and format of data as it moves in and out of the application.
 
  - **View:** The View is what users see and interact with on their screens. It's the visual side of the app, displaying information from the Model in an organized and presentable way.
 
  - **Controller:** The Controller acts as a middleman between the Model and the View. It deals with user inputs, processes them, and then ensures the right feedback is shown to the user through the View.
 
 ![tktk Hunter a visual of MVC here](https://developer.mozilla.org/en-US/docs/Glossary/MVC/model-view-controller-light-blue.png)
+<img src="./assets/mvc-01.png">
 
 ## Why Use MVC?
 
@@ -22,7 +23,7 @@ Key benefits include:
 
  - Structured Organization: MVC clearly defines different roles and responsibilities in the application, leading to better-organized code.
  - Easier Maintenance: Changes in one area, like the design of the interface, don't mess up other parts, such as data handling.
- - Easier to Grow the Application: As your application gets bigger, MVC helps you handle and update each part on its own.
+ - Scalability: As your application gets bigger, MVC helps you handle and update each part on its own.
  - Better Teamwork: Different people or teams can work on separate parts of the application without getting in each other's way, making the whole development process smoother.
 
 ## Use of MVC
