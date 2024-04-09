@@ -1,4 +1,4 @@
-# ![MVC in Express](../assets/tktk-hero.png)
+# ![MVC in Express](../assets/hero.png)
 
 ## About
 

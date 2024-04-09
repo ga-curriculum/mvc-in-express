@@ -12,8 +12,7 @@ MVC stands for Model-View-Controller and is a key approach in building applicati
 
  - **Controller:** The Controller acts as a middleman between the Model and the View. It deals with user inputs, processes them, and then ensures the right feedback is shown to the user through the View.
 
-![tktk Hunter a visual of MVC here](https://developer.mozilla.org/en-US/docs/Glossary/MVC/model-view-controller-light-blue.png)
-<img src="./assets/mvc-01.png">
+![MVC](./assets/mvc.png)
 
 ## Why Use MVC?
 
