@@ -1,4 +1,7 @@
-# ![MVC in Express - MVC in Express](./assets/hero.png)
+<h1>
+  <span class="headline">MVC in Express</span>
+  <span class="subhead">MVC in Express</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to restructure a basic MEN stack app into one that conforms to MVC architecture.
 

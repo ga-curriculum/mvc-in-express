@@ -1,4 +1,7 @@
-# ![Release Notes](../assets/release-notes.png)
+<h1>
+  <span class="headline">MVC in Express</span>
+  <span class="subhead">Release Notes</span>
+</h1>
 
 ## Version 1.0 - Updates from legacy content
 
@@ -8,10 +11,6 @@ This release modularizes the legacy MVC lecture and provides some other minor up
 
 #### Additions
 
-
 #### Changes
 
-
 #### Removals
-
-

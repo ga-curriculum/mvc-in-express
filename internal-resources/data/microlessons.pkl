@@ -1,0 +1,25 @@
+import "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/universal-resources-internal/static/v2/pkl/template.pkl" as Template
+
+// Add microlessons here, in the order they should be delivered
+
+setup = new Template.Microlesson {
+  friendlyName = "Setup"
+  dirName = "setup"
+  type = "Content"
+  videoUrl = ""
+}
+
+concepts = new Template.Microlesson {
+  friendlyName = "Concepts"
+  dirName = "concepts"
+  type = "Content"
+  videoUrl = ""
+}
+
+mvcInExpress = new Template.Microlesson {
+  friendlyName = "MVC in Express"
+  dirName = "mvc-in-express"
+  type = "Content"
+  videoUrl = ""
+}
+
