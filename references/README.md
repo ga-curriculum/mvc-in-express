@@ -1,4 +1,7 @@
-# ![MVC in Express - References](./assets/hero.png)
+<h1>
+  <span class="headline">MVC in Express</span>
+  <span class="subhead">References</span>
+</h1>
 
 ## Lesson references
 

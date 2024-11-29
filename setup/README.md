@@ -1,4 +1,7 @@
-# ![MVC in Express - Setup](./assets/hero.png)
+<h1>
+  <span class="headline">MVC in Express</span>
+  <span class="subhead">Setup</span>
+</h1>
 
 ## Setup
 
