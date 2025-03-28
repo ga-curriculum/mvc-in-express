@@ -16,8 +16,8 @@ concepts = new Template.Microlesson {
   videoUrl = ""
 }
 
-mvcInExpress = new Template.Microlesson {
-  friendlyName = "MVC in Express"
+reorganizingTheApplication = new Template.Microlesson {
+  friendlyName = "Reorganizing the Application"
   dirName = "mvc-in-express"
   type = "Content"
   videoUrl = ""

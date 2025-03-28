@@ -23,7 +23,7 @@ courses {
       // add microlessons here, in the order they should be delivered
       mls.setup
       mls.concepts
-      mls.mvcInExpress
+      mls.reorganizingTheApplication
     }
   }
   new {
@@ -31,7 +31,7 @@ courses {
     microlessons {
       mls.setup
       mls.concepts
-      mls.mvcInExpress
+      mls.reorganizingTheApplication
     }
   }
 }
