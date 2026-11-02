@@ -27,9 +27,9 @@ In this lesson, we'll unravel the three core components of the MVC design patter
 
 ### Starter code
 
-This lecture uses the [`MEN Stack CRUD App Fruits Solution`](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-crud-app-fruits-solution) as starter code. This insures a uniform starting point for our file structure before we make any directory changes. If you have your own complete copy of this application, you can choose to use that instead.
+This lecture uses the [`MEN Stack CRUD App Fruits Solution`](https://github.com/ga-curriculum/men-stack-crud-app-fruits-solution) as starter code. This insures a uniform starting point for our file structure before we make any directory changes. If you have your own complete copy of this application, you can choose to use that instead.
 
-🟢 [Starter code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-crud-app-fruits-solution)
+🟢 [Starter code](https://github.com/ga-curriculum/men-stack-crud-app-fruits-solution)
 
 ### Course landing pages
 
